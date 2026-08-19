@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "images:optimize": "node scripts/optimize-images.mjs",
-    "preview": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy"
+    "preview": "npm run build && wrangler pages dev",
+    "deploy": "npm run build && wrangler pages deploy"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

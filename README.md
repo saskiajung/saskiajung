@@ -3,7 +3,7 @@
 Portfolio site for Saskia Jung, stylist and creative director.
 
 Built with Next.js 16 (App Router), exported as a fully static site and hosted on
-Cloudflare Workers Static Assets.
+Cloudflare Pages.
 
 ## Getting started
 
@@ -57,10 +57,18 @@ npm run preview   # build, then serve via wrangler locally
 npm run deploy    # build, then publish to Cloudflare
 ```
 
-`wrangler.jsonc` serves `./out` and falls back to `404.html`. Caching and
-security headers are set in `public/_headers`.
-
 First time on a new machine, authenticate with `npx wrangler login`.
+
+Connecting the repo in the Cloudflare dashboard instead:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| `NODE_VERSION` | `22` |
+
+`wrangler.jsonc` sets `pages_build_output_dir`. Caching and security headers are
+set in `public/_headers`, which Pages reads from the build output.
 
 ## Known gaps
 
