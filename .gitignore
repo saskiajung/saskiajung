@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare
+.wrangler/
+out/
+
+# next.js agent files (auto-generated)
+AGENTS.md
+CLAUDE.md
