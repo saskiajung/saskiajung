@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { type MenuItem, site } from "@/lib/projects";
 
@@ -15,10 +16,10 @@ export function Navbar({ menu }: Props) {
       <div className="container-fluid">
         <div className="row">
           <div className="col c-navbar__container">
-            <a href="/" className="c-navbar__logo">
+            <Link href="/" className="c-navbar__logo">
               {site.first.charAt(0)}
               {site.last.charAt(0)}
-            </a>
+            </Link>
             <button
               className="c-navbar__menu"
               type="button"

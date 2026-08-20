@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Jost } from "next/font/google";
-import { Loader } from "@/components/Loader";
 import { site } from "@/lib/projects";
 import "./globals.css";
 
@@ -46,11 +45,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <noscript>
-          <style>{`.c-loader{display:none}.is-loading .c-home__section.is-active .c-home__image{clip-path:inset(0 0 0 0)}.is-loading .c-home__section.is-active .c-home__image img{transform:none}`}</style>
+          <style>{`.is-loading .c-home__hero-frame{transform:translate(-50%,-50%) translateY(var(--hero-t1,0px)) scale(1)}.is-loading .c-home__grow{max-width:none}.is-loading .c-navbar,.is-loading .c-navbar__now{opacity:1}.is-loading .c-home__section.is-active .c-home__image{clip-path:inset(0 0 0 0)}.is-loading .c-home__section.is-active .c-home__image img{transform:none}`}</style>
         </noscript>
       </head>
       <body>
-        <Loader />
         {children}
       </body>
     </html>

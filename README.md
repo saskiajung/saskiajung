@@ -26,7 +26,7 @@ npx npm@10.9.2 install --package-lock-only
 | Path | Purpose |
 | --- | --- |
 | `app/` | Routes, root layout, and the design system in `globals.css` |
-| `components/` | `Home` (scroll sections), `Navbar` (menu), `Loader`, `Photo` |
+| `components/` | `Home` (hero, sections, intro), `Navbar` (menu), `Photo` |
 | `lib/projects.ts` | Site copy, menu items, and project data |
 | `assets/` | Original photography, not deployed |
 | `public/images/` | Generated WebP derivatives, deployed |

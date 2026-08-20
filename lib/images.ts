@@ -1,0 +1,46 @@
+export type ImageMeta = {
+  width: number;
+  height: number;
+  widths: number[];
+};
+
+export const images: Record<string, ImageMeta> = {
+  "/images/10magazine/10magazine-de-nina-raasch-01": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-02": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-03": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-04": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-05": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-06": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-07": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-08": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-09": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-10": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/10magazine/10magazine-de-nina-raasch-11": { width: 1600, height: 2000, widths: [480, 640, 960, 1440, 1600] },
+  "/images/gant/gant-special-zoo-nina-raasch-01": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-02": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-03": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-04": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-05": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-06": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-07": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-08": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-09": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-10": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-11": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-12": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/gant/gant-special-zoo-nina-raasch-13": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/glamcult/glamcult-boyshood-daniel-roche-08": { width: 1920, height: 1280, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779527761-18610352347050604-1955805883961148961-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779624538-18610352464050604-6744657966143841321-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779669259-18610352425050604-379700904525683470-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779669337-18610352404050604-7811910933283995580-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779728996-18610352389050604-5668036846249176139-n": { width: 2433, height: 3244, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779816268-18610352413050604-8075764012483892659-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-779865305-18610352371050604-2470997872958034122-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/one-magazine/snapinsta-to-780140090-18610352449050604-2255341432987877733-n": { width: 3072, height: 4096, widths: [480, 640, 960, 1440, 1920] },
+  "/images/sleekmag/snapinsta-to-645988112-17887872621329248-1546588180640997126-n": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/sleekmag/snapinsta-to-649052056-17890853085310471-4177207046912289030-n": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/sleekmag/snapinsta-to-656023737-18106984879863868-8834461460961565959-n": { width: 1440, height: 1796, widths: [480, 640, 960, 1440] },
+  "/images/sleekmag/snapinsta-to-656064828-18205741060332931-5516023910985996561-n": { width: 1440, height: 1800, widths: [480, 640, 960, 1440] },
+  "/images/sleekmag/snapinsta-to-657761369-18198249286350937-5450906341374023684-n": { width: 1440, height: 1796, widths: [480, 640, 960, 1440] },
+};
