@@ -12,6 +12,15 @@ npm install
 npm run dev
 ```
 
+The project is pinned to npm 10 via `packageManager`, matching the version
+Cloudflare's builder runs. npm 10 and 11 disagree about which optional platform
+packages belong in a lock file, so a lock written by npm 11 fails the `npm ci`
+that CI performs. Regenerate the lock with that pinned version:
+
+```bash
+npx npm@10.9.2 install --package-lock-only
+```
+
 ## Structure
 
 | Path | Purpose |
