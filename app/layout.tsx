@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Jost } from "next/font/google";
 import { site } from "@/lib/projects";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const sans = Jost({

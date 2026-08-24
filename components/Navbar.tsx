@@ -1,15 +1,56 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { type MenuItem, site } from "@/lib/projects";
 
 type Props = {
   menu: MenuItem[];
 };
 
+gsap.registerPlugin(useGSAP);
+
 export function Navbar({ menu }: Props) {
   const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const docEl = document.documentElement;
+      const main = document.querySelector("main");
+
+      docEl.classList.toggle("is-locked", open);
+      if (main) main.inert = open;
+      window.dispatchEvent(
+        new CustomEvent("sj:scroll-lock", { detail: open }),
+      );
+
+      if (open) {
+        panel.current?.querySelector<HTMLAnchorElement>(".c-menu__link")?.focus();
+      }
+
+      const onKey = (event: KeyboardEvent) => {
+        if (event.key !== "Escape") return;
+        setOpen(false);
+        toggle.current?.focus();
+      };
+
+      if (open) window.addEventListener("keydown", onKey);
+
+      return () => {
+        window.removeEventListener("keydown", onKey);
+        docEl.classList.remove("is-locked");
+        if (main) main.inert = false;
+        window.dispatchEvent(
+          new CustomEvent("sj:scroll-lock", { detail: false }),
+        );
+      };
+    },
+    { dependencies: [open] },
+  );
 
   return (
     <nav className={`c-navbar${open ? " is-menu-open" : ""}`}>
@@ -22,6 +63,7 @@ export function Navbar({ menu }: Props) {
             </Link>
             <button
               className="c-navbar__menu"
+              ref={toggle}
               type="button"
               aria-expanded={open}
               aria-controls="navbar-links"
@@ -33,7 +75,12 @@ export function Navbar({ menu }: Props) {
         </div>
       </div>
 
-      <div className="c-navbar__links" id="navbar-links" inert={!open}>
+      <div
+        className="c-navbar__links"
+        id="navbar-links"
+        inert={!open}
+        ref={panel}
+      >
         <div className="c-navbar__links-container">
           <div className="c-menu">
             <ul className="c-menu__rows">

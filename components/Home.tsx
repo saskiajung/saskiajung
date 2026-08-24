@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -43,16 +44,14 @@ type Props = {
 
 export function Home({ projects }: Props) {
   const root = useRef<HTMLDivElement>(null);
-  const scroller = useRef<HTMLDivElement>(null);
   const wordmark = useRef<HTMLHeadingElement>(null);
   const [active, setActive] = useState(-1);
 
   useGSAP(
     () => {
-      const container = scroller.current;
       const home = root.current;
       const mark = wordmark.current;
-      if (!container || !home || !mark) return;
+      if (!home || !mark) return;
 
       const documentEl = document.documentElement;
       const style = documentEl.style;
@@ -66,7 +65,6 @@ export function Home({ projects }: Props) {
 
           ScrollTrigger.create({
             trigger: section,
-            scroller: container,
             start: "top center",
             end: "bottom center",
             toggleClass: "is-active",
@@ -136,8 +134,7 @@ export function Home({ projects }: Props) {
             ease: "none",
             scrollTrigger: {
               trigger: heroSection,
-              scroller: container,
-              start: "top top",
+                start: "top top",
               end: "bottom top",
               scrub: reduced ? true : 0.8,
             },
@@ -153,8 +150,7 @@ export function Home({ projects }: Props) {
               ease: "none",
               scrollTrigger: {
                 trigger: heroSection,
-                scroller: container,
-                start: "top top",
+                    start: "top top",
                 end: "bottom top",
                 scrub: true,
               },
@@ -205,51 +201,53 @@ export function Home({ projects }: Props) {
 
   return (
     <div className="c-home" ref={root}>
-      <div className="c-home__container" ref={scroller}>
-        <section
-          className="c-home__hero"
-          data-color={hero.color}
-          data-index={-1}
-          aria-label="Saskia Jung, stylist and creative director"
-        >
-          <div className="c-home__hero-media">
-            <div
-              className="c-home__hero-frame"
-              style={
-                {
-                  "--hero-aspect": `${heroMeta.width / heroMeta.height}`,
-                } as React.CSSProperties
-              }
-            >
-              <Photo alt={hero.alt} priority sizes="100vw" src={hero.src} />
-            </div>
-          </div>
-        </section>
-
-        {projects.map((project, index) => (
+      <div className="c-home__container">
           <section
-            className="c-home__section"
-            key={project.slug}
-            data-color={project.color}
-            data-index={index}
-            data-layout={project.layout}
-            aria-label={`${project.title}, ${project.year}`}
+            className="c-home__hero"
+            data-color={hero.color}
+            data-index={-1}
+            aria-label="Saskia Jung, stylist and creative director"
           >
-            <a className="c-home__frame" href={`/work/${project.slug}`}>
-              {project.images.map((image) => (
-                <span className="c-home__image" key={image.src}>
-                  <Photo
-                    alt={image.alt}
-                    sizes={
-                      project.layout === "spread" ? SPREAD_SIZES : SINGLE_SIZES
-                    }
-                    src={image.src}
-                  />
-                </span>
-              ))}
-            </a>
+            <div className="c-home__hero-media">
+              <div
+                className="c-home__hero-frame"
+                style={
+                  {
+                    "--hero-aspect": `${heroMeta.width / heroMeta.height}`,
+                  } as React.CSSProperties
+                }
+              >
+                <Photo alt={hero.alt} priority sizes="100vw" src={hero.src} />
+              </div>
+            </div>
           </section>
-        ))}
+
+          {projects.map((project, index) => (
+            <section
+              className="c-home__section"
+              key={project.slug}
+              data-color={project.color}
+              data-index={index}
+              data-layout={project.layout}
+              aria-label={`${project.title}, ${project.year}`}
+            >
+              <Link className="c-home__frame" href={`/work/${project.slug}`}>
+                {project.home.map((i) => project.story[i]).map((image) => (
+                  <span className="c-home__image" key={image.src}>
+                    <Photo
+                      alt={image.alt}
+                      sizes={
+                        project.layout === "spread"
+                          ? SPREAD_SIZES
+                          : SINGLE_SIZES
+                      }
+                      src={image.src}
+                    />
+                  </span>
+                ))}
+              </Link>
+            </section>
+          ))}
       </div>
 
       <h1
