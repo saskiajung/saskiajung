@@ -1254,13 +1254,30 @@ button:focus-visible {
   border: 1px solid currentColor;
   display: flex;
   opacity: 0.34;
+  overflow: hidden;
   padding: var(--space-s);
+  position: relative;
   width: 100%;
 }
 
 .c-slot::before {
   content: "";
   padding-top: var(--slot-ratio, 125%);
+}
+
+.c-slot[data-filled] {
+  border: 0;
+  opacity: 1;
+  padding: 0;
+}
+
+.c-slot[data-filled] img {
+  display: block;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
 }
 
 .c-slot__label {

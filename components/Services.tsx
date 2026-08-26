@@ -59,7 +59,7 @@ export function Services() {
 
             <Slot
               className="c-service__figure"
-              sizes="(orientation: landscape) 26vw, 86vw"
+              sizes="(orientation: landscape) 32vw, 86vw"
               slot={service.visual}
             />
           </section>

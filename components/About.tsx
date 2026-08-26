@@ -46,7 +46,7 @@ export function About() {
         <Slot
           className="c-about__portrait c-reveal"
           priority
-          sizes="(orientation: landscape) 38vw, 86vw"
+          sizes="(orientation: landscape) 40vw, 86vw"
           slot={about.portrait}
         />
 
@@ -75,7 +75,7 @@ export function About() {
             {about.onCamera.map((item) => (
               <figure className="c-oncamera__item c-reveal" key={item.title}>
                 <Slot
-                  sizes="(orientation: landscape) 30vw, 86vw"
+                  sizes="(orientation: landscape) 32vw, 86vw"
                   slot={item.visual}
                 />
                 <figcaption>
