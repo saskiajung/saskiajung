@@ -3,8 +3,21 @@ export type ProjectImage = {
   alt: string;
 };
 
+export type Category = "styling" | "campaign";
+
+export const categories: Record<Category, string> = {
+  styling: "Styling & Creative Direction",
+  campaign: "Commercial & Campaign",
+};
+
+export const categoriesOrder = [
+  { key: "styling" as Category, label: categories.styling },
+  { key: "campaign" as Category, label: categories.campaign },
+];
+
 export type Project = {
   slug: string;
+  category: Category;
   title: string;
   year: string;
   credit: string;
@@ -18,13 +31,20 @@ export type Project = {
 export type MenuItem = {
   label: string;
   href: string;
+  children?: MenuItem[];
 };
 
 export const menu: MenuItem[] = [
-  { label: "Work", href: "/work" },
-  { label: "Creative Direction", href: "/creative-direction" },
-  { label: "Styling", href: "/styling" },
-  { label: "About", href: "/about" },
+  {
+    label: "Selected Work",
+    href: "/work",
+    children: [
+      { label: categoriesOrder[0].label, href: "/work?c=styling" },
+      { label: categoriesOrder[1].label, href: "/work?c=campaign" },
+    ],
+  },
+  { label: "Services & Consulting", href: "/services" },
+  { label: "About & On Camera", href: "/about" },
 ];
 
 export const site = {
@@ -49,6 +69,7 @@ const sleek = "/images/sleekmag/snapinsta-to";
 export const projects: Project[] = [
   {
     slug: "10-magazine",
+    category: "styling",
     title: "10 Magazine",
     year: "2025",
     credit: "10 Magazine Germany",
@@ -105,6 +126,7 @@ export const projects: Project[] = [
   },
   {
     slug: "gant-zoo",
+    category: "campaign",
     title: "GANT Special ZOO",
     year: "2024",
     credit: "GANT",
@@ -169,6 +191,7 @@ export const projects: Project[] = [
   },
   {
     slug: "one-magazine",
+    category: "styling",
     title: "One Magazine",
     year: "2024",
     credit: "One Magazine",
@@ -213,6 +236,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sleek-magazine",
+    category: "styling",
     title: "Sleek Magazine",
     year: "2025",
     credit: "Sleek Magazine",

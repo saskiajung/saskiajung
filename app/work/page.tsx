@@ -4,7 +4,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { Work } from "@/components/Work";
 import { menu, projects, site } from "@/lib/projects";
 
-const title = `Work - ${site.first} ${site.last}`;
+const title = `Selected Work - ${site.first} ${site.last}`;
 const description =
   "Selected editorial and campaign work by Saskia Jung, stylist and creative director.";
 
