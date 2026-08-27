@@ -31,20 +31,55 @@ export type Project = {
 export type MenuItem = {
   label: string;
   href: string;
-  children?: MenuItem[];
+  preview: { src: string; alt: string };
+  children?: { label: string; href: string }[];
 };
 
 export const menu: MenuItem[] = [
   {
     label: "Selected Work",
     href: "/work",
+    preview: {
+      src: "/images/10magazine/10magazine-de-nina-raasch-01",
+      alt: "A model in a white strapless top and floor-length black skirt.",
+    },
     children: [
       { label: categoriesOrder[0].label, href: "/work?c=styling" },
       { label: categoriesOrder[1].label, href: "/work?c=campaign" },
     ],
   },
-  { label: "Services & Consulting", href: "/services" },
-  { label: "About & On Camera", href: "/about" },
+  {
+    label: "Creative Direction & Styling",
+    href: "/creative-direction",
+    preview: {
+      src: "/images/deck/creative-direction-lace-up",
+      alt: "A model in a white shirt and laced black skirt against dark panelling.",
+    },
+  },
+  {
+    label: "On Camera & Brand Partnerships",
+    href: "/on-camera",
+    preview: {
+      src: "/images/deck/on-camera-sleek-cybex",
+      alt: "A Sleek magazine cover featuring Saskia Jung.",
+    },
+  },
+  {
+    label: "Workshops & Mentoring",
+    href: "/workshops",
+    preview: {
+      src: "/images/deck/workshops-kadewe",
+      alt: "Saskia Jung presenting beside a rail of garments.",
+    },
+  },
+  {
+    label: "About & Vision",
+    href: "/about",
+    preview: {
+      src: "/images/deck/portrait-saskia",
+      alt: "Saskia Jung in a black blazer and sunglasses.",
+    },
+  },
 ];
 
 export const site = {

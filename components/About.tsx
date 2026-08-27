@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Slot } from "@/components/Slot";
 import { about } from "@/lib/content";
-import { projects, site } from "@/lib/projects";
+import { site } from "@/lib/projects";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -22,12 +22,12 @@ export function About() {
 
       const style = document.documentElement.style;
       style.setProperty("--color-page-bg", site.backgroundColor);
-      style.setProperty("--color-page-text", projects[2].color);
+      style.setProperty("--color-page-text", about.color);
 
       gsap.utils.toArray<HTMLElement>(".c-reveal", el).forEach((item) => {
         ScrollTrigger.create({
           trigger: item,
-          start: "top 86%",
+          start: "top 88%",
           once: true,
           onEnter: () => item.classList.add("is-in"),
         });
@@ -51,9 +51,17 @@ export function About() {
         />
 
         <div className="c-about__bio">
+          <p className="c-about__headline">{about.headline}</p>
+
           {about.bio.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+
+          <ul className="c-about__meta">
+            {about.meta.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
 
           <div className="c-about__clients">
             <h2 className="c-about__clients-label">{about.clientsLabel}</h2>
@@ -65,28 +73,6 @@ export function About() {
           </div>
         </div>
       </div>
-
-      {about.onCamera.length > 0 ? (
-        <section className="c-oncamera">
-          <h2 className="c-oncamera__label">{about.onCameraLabel}</h2>
-          <p className="c-oncamera__lead">{about.onCameraLead}</p>
-
-          <div className="c-oncamera__grid">
-            {about.onCamera.map((item) => (
-              <figure className="c-oncamera__item c-reveal" key={item.title}>
-                <Slot
-                  sizes="(orientation: landscape) 32vw, 86vw"
-                  slot={item.visual}
-                />
-                <figcaption>
-                  <span className="c-oncamera__title">{item.title}</span>
-                  <span className="c-oncamera__note">{item.note}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-      ) : null}
     </div>
   );
 }

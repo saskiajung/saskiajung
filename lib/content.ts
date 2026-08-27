@@ -4,142 +4,208 @@ export type Slot = {
   pending: string;
 };
 
-export type Service = {
-  name: string;
-  lead: string;
-  includes: string[];
+export type Block = {
+  label: string;
+  items: string[];
+};
+
+export type WorkItem = {
+  caption?: string;
   visual: Slot;
 };
 
-export type OnCameraItem = {
+export type Practice = {
+  slug: string;
   title: string;
-  note: string;
-  visual: Slot;
+  lead: string;
+  color: string;
+  blocks: Block[];
+  work: WorkItem[];
 };
 
 export const showPending = true;
 
-const ten = "/images/10magazine/10magazine-de-nina-raasch";
-const gant = "/images/gant/gant-special-zoo-nina-raasch";
+const deck = "/images/deck";
 const one = "/images/one-magazine/snapinsta-to";
-const sleek = "/images/sleekmag/snapinsta-to";
 
-export const services = {
-  title: "Services & Consulting",
-  lead: "Styling and creative direction for editorial, campaign and brand work, from first concept through to the final edit.",
-  items: [
-    {
-      name: "Styling",
-      lead: "Editorial, campaign and lookbook styling, from concept through to shoot day.",
-      includes: [
-        "Editorial and campaign styling",
-        "Casting support and fittings",
-        "Wardrobe sourcing, call-in and returns",
-        "On-set direction",
-      ],
-      visual: {
-        pending: "Rack and fitting",
-        src: `${ten}-11`,
-        alt: "A model carrying a folded green garment over a layered coat and wide pinstripe trousers.",
+export const practices: Practice[] = [
+  {
+    slug: "creative-direction",
+    title: "Creative Direction & Styling",
+    color: "#22403C",
+    lead: "Turning brand DNA into distinct visual stories, from moodboards and talent selection through to full on-set execution.",
+    blocks: [
+      {
+        label: "Focus",
+        items: [
+          "Campaign concepts",
+          "Lookbook direction",
+          "E-commerce elevating",
+          "Wardrobe sourcing",
+        ],
       },
-    },
-    {
-      name: "Creative Direction",
-      lead: "Concept, casting and art direction for shoots and brand campaigns.",
-      includes: [
-        "Concept development and moodboards",
-        "Casting and team assembly",
-        "Art direction on set",
-        "Image selection and final edit",
-      ],
-      visual: {
-        pending: "Moodboard and references",
-        src: `${ten}-06`,
-        alt: "A black and white contact sheet of frames showing hair caught in motion.",
+    ],
+    work: [
+      {
+        visual: {
+          pending: "Campaign frame",
+          src: `${deck}/creative-direction-lace-up`,
+          alt: "A model in a white shirt and laced black skirt against dark panelling.",
+        },
       },
-    },
-    {
-      name: "Project Work",
-      lead: "End-to-end engagements scoped per project, from brief to delivery.",
-      includes: [
-        "Seasonal campaign build",
-        "Lookbook and collection shoots",
-        "Production and team coordination",
-        "Delivery and asset handover",
-      ],
-      visual: {
-        pending: "On set",
-        src: `${gant}-07`,
-        alt: "Two models standing on a wooden pallet, one in a white tee, one in brown tailoring.",
+      {
+        visual: {
+          pending: "Campaign frame",
+          src: `${deck}/creative-direction-court`,
+          alt: "Two models in trench coats carrying rackets on a tennis court, in black and white.",
+        },
       },
-    },
-    {
-      name: "Consulting & Advisory",
-      lead: "Advisory for brands building or refining a visual identity.",
-      includes: [
-        "Brand and collection consulting",
-        "Seasonal planning",
-        "Team briefing and training",
-        "Ongoing creative advisory",
-      ],
-      visual: {
-        pending: "Studio and prep",
-        src: `${gant}-06`,
-        alt: "A model in a grey turtleneck and brown trousers leaning against a white wall.",
+      {
+        visual: {
+          pending: "Campaign frame",
+          src: `${deck}/creative-direction-red-dress`,
+          alt: "A model in a red midi dress beside a pale concrete column.",
+        },
       },
-    },
-  ] as Service[],
-};
+    ],
+  },
+  {
+    slug: "on-camera",
+    title: "On Camera & Brand Partnerships",
+    color: "#2B3A67",
+    lead: "Bridging high-fashion expertise with engaging storytelling: hosting events, curating brand-favourite picks, and guiding audiences through upcoming trends.",
+    blocks: [
+      {
+        label: "Services",
+        items: [
+          "Event hosting",
+          "On-camera trend commentary",
+          "Live shopping and content creation",
+          "Editorial and commercial styling",
+        ],
+      },
+    ],
+    work: [
+      {
+        caption: "Sleek and Cybex",
+        visual: {
+          pending: "Cover",
+          src: `${deck}/on-camera-sleek-cybex`,
+          alt: "A Sleek magazine cover featuring Saskia Jung in denim and a fringed skirt.",
+        },
+      },
+      {
+        caption: "Hosting event with Sellpy",
+        visual: {
+          pending: "Event still",
+          src: `${deck}/on-camera-sellpy`,
+          alt: "Saskia Jung interviewing a guest with a microphone at a Sellpy event.",
+        },
+      },
+      {
+        caption: "Hosting event with Sezane",
+        visual: {
+          pending: "Event still",
+          src: `${deck}/on-camera-sezane`,
+          alt: "A group of guests photographed together at a Sezane hosting event.",
+        },
+      },
+      {
+        caption: "Mother's Day campaign with Edited",
+        visual: {
+          pending: "Campaign still",
+          src: `${deck}/on-camera-edited`,
+          alt: "A woman and a small child in matching denim against a pale blue wall.",
+        },
+      },
+    ],
+  },
+  {
+    slug: "workshops",
+    title: "Workshops & Mentoring",
+    color: "#1F4E5F",
+    lead: "Workshops and mentoring for brands, teams and emerging stylists, built around wardrobe, trend direction and set work.",
+    blocks: [
+      {
+        label: "Formats",
+        items: [
+          "Interactive brand workshops",
+          "Corporate styling masterclasses",
+          "Executive wardrobe coaching",
+          "One-to-one mentoring for emerging stylists",
+        ],
+      },
+      {
+        label: "Core topics",
+        items: [
+          "Personal branding through wardrobe",
+          "Seasonal trend direction",
+          "Professional sourcing and set work mastery",
+        ],
+      },
+    ],
+    work: [
+      {
+        caption: "Styling masterclass",
+        visual: {
+          pending: "Masterclass",
+          src: `${one}-779816268-18610352413050604-8075764012483892659-n`,
+          alt: "A model in a black shearling coat with long hair falling across the frame.",
+        },
+      },
+      {
+        caption: "Styled for KaDeWe",
+        visual: {
+          pending: "Video still",
+          src: `${deck}/workshops-kadewe`,
+          alt: "Saskia Jung presenting beside a rail of garments in a KaDeWe fitting space.",
+        },
+      },
+      {
+        caption: "Hosting event",
+        visual: {
+          pending: "Event still",
+          src: `${deck}/workshops-hosting`,
+          alt: "A styling rail and merchandised wall inside a Sellpy store.",
+        },
+      },
+      {
+        caption: "Styling on set",
+        visual: {
+          pending: "On set",
+          src: `${deck}/workshops-on-set`,
+          alt: "Two stylists carrying garment bags along a street on a shoot day.",
+        },
+      },
+    ],
+  },
+];
 
 export const about = {
-  title: "About & On Camera",
+  title: "About & Vision",
+  color: "#5B2D4A",
+  headline: "Modern elegance meets strategic vision",
   bio: [
-    "Saskia Jung is a stylist and creative director working across editorial, campaign and brand projects.",
-    "Her work moves between magazine editorial and commercial campaign, shaping a look from the first reference through casting, fitting and the final edit.",
+    "Based in Berlin, I work at the intersection of creative direction, high-end styling, and brand storytelling.",
+    "My approach combines editorial sophistication with a deep understanding of brand identity, creating visual narratives that feel effortless, contemporary, and distinct.",
   ],
+  meta: ["Fashion Director", "Berlin and worldwide", "Since 2021"],
   portrait: {
     pending: "Portrait",
-    src: `${one}-779865305-18610352371050604-2470997872958034122-n`,
-    alt: "A model in a soft grey-blue top seated, long hair over the shoulders.",
+    src: `${deck}/portrait-saskia`,
+    alt: "Saskia Jung in a black blazer and sunglasses, smiling.",
   } as Slot,
   clientsLabel: "Selected clients",
   clients: [
     "GANT",
+    "KaDeWe",
+    "Sezane",
+    "Sellpy",
+    "Edited",
+    "Cybex",
     "Lala Berlin",
+    "Sleek Magazine",
     "10 Magazine",
     "One Magazine",
-    "Sleek Magazine",
   ],
-  onCameraLabel: "On Camera",
-  onCameraLead:
-    "Hosting, presenting and brand partnerships in front of the camera.",
-  onCamera: [
-    {
-      title: "Presenting",
-      note: "Showreel",
-      visual: {
-        pending: "Video still",
-        src: `${sleek}-656064828-18205741060332931-5516023910985996561-n`,
-        alt: "A close-cropped black and white portrait of a model with a sharp bob.",
-      },
-    },
-    {
-      title: "Brand partnership",
-      note: "Campaign",
-      visual: {
-        pending: "Video still",
-        src: `${sleek}-657761369-18198249286350937-5450906341374023684-n`,
-        alt: "A model in an electric blue satin jacket leaning forward, hair swept across the frame.",
-      },
-    },
-    {
-      title: "Interview",
-      note: "Feature",
-      visual: {
-        pending: "Video still",
-        src: `${one}-779669337-18610352404050604-7811910933283995580-n`,
-        alt: "A model in sunglasses and a black jacket over a nude bandeau, outside a shopfront.",
-      },
-    },
-  ] as OnCameraItem[],
 };
