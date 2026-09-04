@@ -6,6 +6,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Film } from "@/components/Film";
 import { Photo } from "@/components/Photo";
 import {
   categories,
@@ -63,6 +64,15 @@ export function Project({ project, next }: Props) {
         <h1 className="c-project__title">{project.title}</h1>
         <p className="c-project__meta">{categories[project.category]}</p>
       </header>
+
+      {project.film ? (
+        <Film
+          caption={project.film.caption}
+          label={project.film.label}
+          landscape={project.film.landscape}
+          portrait={project.film.portrait}
+        />
+      ) : null}
 
       <div className="c-project__grid">
         {project.story.map((image, index) => {

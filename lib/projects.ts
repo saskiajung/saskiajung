@@ -15,6 +15,13 @@ export const categoriesOrder = [
   { key: "campaign" as Category, label: categories.campaign },
 ];
 
+export type ProjectFilm = {
+  landscape: string;
+  portrait: string;
+  label: string;
+  caption: string;
+};
+
 export type Project = {
   slug: string;
   category: Category;
@@ -24,6 +31,7 @@ export type Project = {
   story: ProjectImage[];
   home: number[];
   cover: number;
+  film?: ProjectFilm;
 };
 
 export type MenuItem = {
@@ -83,6 +91,13 @@ export const projects: Project[] = [
     layout: "spread",
     home: [0, 1],
     cover: 1,
+    film: {
+      landscape: "/videos/yoox/yoox-leave-your-mark-film-1x1",
+      portrait: "/videos/yoox/yoox-leave-your-mark-film-9x16",
+      label:
+        "The YOOX Leave Your Mark campaign film, styled by Saskia Jung: a chef, a visual artist and a designer at work, cut between full looks walked through the city.",
+      caption: "Leave Your Mark - campaign film",
+    },
     story: [
       {
         src: "/images/yoox/yoox-leave-your-mark-photo-christopher-1-1",

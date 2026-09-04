@@ -1152,6 +1152,118 @@ button:focus-visible {
 }
 
 
+/* ----------------------------------------------------------------- film */
+
+.c-film {
+  margin: 0 auto;
+  max-width: calc(100% - var(--gutter) * 2);
+  padding-bottom: var(--space-2xl);
+  width: min(78svh * var(--film-wide), 64vw);
+}
+
+.c-film__frame {
+  aspect-ratio: var(--film-wide);
+  background-color: color-mix(
+    in oklab,
+    var(--color-page-text) 10%,
+    transparent
+  );
+  clip-path: inset(100% 0 0 0);
+  position: relative;
+  transition: clip-path 900ms var(--ease-out);
+}
+
+.c-film.is-in .c-film__frame {
+  clip-path: inset(0 0 0 0);
+}
+
+.c-film__frame video,
+.c-film__poster img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(var(--reveal-shift));
+  transition: transform 900ms var(--ease-out);
+  width: 100%;
+}
+
+.c-film.is-in .c-film__frame video,
+.c-film.is-in .c-film__poster img {
+  transform: translateY(0);
+}
+
+.c-film__poster {
+  inset: 0;
+  position: absolute;
+  transition: opacity 600ms ease;
+}
+
+.c-film.is-playing .c-film__poster {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.c-film__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-m);
+  justify-content: space-between;
+  padding-top: var(--space-s);
+}
+
+.c-film__caption,
+.c-film__control {
+  font-size: var(--type-0);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.c-film__caption {
+  opacity: 0.55;
+}
+
+.c-film__controls {
+  display: flex;
+  gap: var(--space-m);
+}
+
+.c-film__control {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+@media (orientation: portrait) {
+  .c-film {
+    width: min(100%, 86svh * var(--film-tall));
+  }
+
+  .c-film__frame {
+    aspect-ratio: var(--film-tall);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-film__frame {
+    clip-path: inset(0 0 0 0);
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  .c-film__frame video {
+    transform: none;
+    transition: none;
+  }
+
+  .c-film.is-in .c-film__frame {
+    opacity: 1;
+  }
+}
+
+
 /* ----------------------------------------------------------------- page */
 
 .c-page {

@@ -10,7 +10,8 @@
     "lint": "eslint",
     "images:optimize": "node scripts/optimize-images.mjs",
     "preview": "npm run build && wrangler pages dev",
-    "deploy": "npm run build && wrangler pages deploy"
+    "deploy": "npm run build && wrangler pages deploy",
+    "videos:optimize": "node scripts/optimize-videos.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
