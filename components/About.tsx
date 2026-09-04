@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -74,7 +75,9 @@ export function About() {
         </div>
       </div>
 
-      {about.sections.map((section) => (
+      {about.sections.map((section) => {
+        const columns = Math.min(section.work.length, 4);
+        return (
         <section className="c-strand" key={section.label}>
           <header className="c-strand__head">
             <h2 className="c-strand__title">{section.label}</h2>
@@ -94,14 +97,21 @@ export function About() {
             ))}
           </div>
 
-          <div className="c-practice__work">
+          <div
+            className="c-practice__work"
+            style={
+              {
+                "--work-cols": columns,
+              } as CSSProperties
+            }
+          >
             {section.work.map((item, index) => (
               <figure
                 className="c-practice__item c-reveal"
                 key={item.visual.src ?? index}
               >
                 <Slot
-                  sizes="(orientation: landscape) 24vw, 86vw"
+                  sizes={`(orientation: landscape) ${Math.round(96 / columns)}vw, 86vw`}
                   slot={item.visual}
                 />
                 {item.caption ? (
@@ -113,7 +123,8 @@ export function About() {
             ))}
           </div>
         </section>
-      ))}
+        );
+      })}
     </div>
   );
 }

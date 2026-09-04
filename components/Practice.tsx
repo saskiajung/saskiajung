@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,6 +17,7 @@ type Props = {
 
 export function Practice({ practice }: Props) {
   const root = useRef<HTMLDivElement>(null);
+  const columns = Math.min(practice.work.length, 4);
 
   useGSAP(
     () => {
@@ -60,14 +62,21 @@ export function Practice({ practice }: Props) {
         ))}
       </div>
 
-      <div className="c-practice__work">
+      <div
+        className="c-practice__work"
+        style={
+          {
+            "--work-cols": columns,
+          } as CSSProperties
+        }
+      >
         {practice.work.map((item, index) => (
           <figure
             className="c-practice__item c-reveal"
             key={item.visual.src ?? index}
           >
             <Slot
-              sizes="(orientation: landscape) 24vw, 86vw"
+              sizes={`(orientation: landscape) ${Math.round(96 / columns)}vw, 86vw`}
               slot={item.visual}
             />
             {item.caption ? (

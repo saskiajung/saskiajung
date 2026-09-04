@@ -96,8 +96,11 @@ ul,
 li,
 nav,
 button,
+figure,
+figcaption,
 h1,
-h2 {
+h2,
+h3 {
   margin: 0;
   padding: 0;
   border: 0;
@@ -1255,7 +1258,6 @@ button:focus-visible {
   }
 
   .c-practice__block,
-  .c-practice__block:nth-child(2),
   .c-practice__item,
   .c-about__portrait,
   .c-about__bio,
@@ -1286,12 +1288,8 @@ button:focus-visible {
 
 .c-practice__block {
   border-top: 1px solid currentColor;
-  grid-column: span 5;
+  grid-column: span 6;
   padding-top: var(--space-m);
-}
-
-.c-practice__block:nth-child(2) {
-  grid-column: 7 / span 5;
 }
 
 .c-practice__label {
@@ -1317,14 +1315,12 @@ button:focus-visible {
 .c-practice__work {
   display: grid;
   gap: var(--space-xl) var(--gutter);
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(var(--work-cols, 4), 1fr);
   padding: 0 var(--gutter);
 }
 
 .c-practice__item {
   --slot-ratio: 125%;
-
-  grid-column: span 3;
   opacity: 0;
   transform: translateY(14px);
   transition:
