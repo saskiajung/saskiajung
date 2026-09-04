@@ -223,14 +223,19 @@ button:focus-visible {
 }
 
 .c-navbar__container {
+  color: var(--color-nav, var(--color-page-text));
   display: flex;
   font-size: var(--type-0);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   justify-content: space-between;
   line-height: 100%;
-  transition: color 300ms ease 300ms;
+  transition: color 300ms ease;
   z-index: 400;
+}
+
+.is-menu-open .c-navbar__container {
+  transition-delay: 300ms;
 }
 
 .is-menu-open .c-navbar__container {
@@ -545,6 +550,20 @@ button:focus-visible {
   inset: 0;
   position: absolute;
   z-index: 100;
+}
+
+.c-home__hero::after {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.62) 0%,
+    rgb(0 0 0 / 0.28) 8%,
+    rgb(0 0 0 / 0) 18%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 110;
 }
 
 .c-home__hero-frame {

@@ -126,6 +126,19 @@ export function Home({ projects }: Props) {
       observer.observe(home);
 
       if (heroSection) {
+        ScrollTrigger.create({
+          trigger: heroSection,
+          start: "top bottom",
+          end: "bottom top",
+          onToggle: ({ isActive }) => {
+            if (isActive) {
+              style.setProperty("--color-nav", hero.wordmark);
+            } else {
+              style.removeProperty("--color-nav");
+            }
+          },
+        });
+
         gsap.fromTo(
           mark,
           { "--wm-p": 0 },
@@ -194,6 +207,7 @@ export function Home({ projects }: Props) {
       return () => {
         intro?.kill();
         observer.disconnect();
+        style.removeProperty("--color-nav");
       };
     },
     { scope: root },
