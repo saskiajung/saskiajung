@@ -49,7 +49,7 @@
   --wm-bottom: calc(var(--gutter) - var(--wm-hero-fs) * 0.0817);
   --wm-y0: calc(50svh - var(--wm-bottom) - var(--wm-hero-fs) * 0.95 / 2);
 
-  --hero-aspect: 0.8;
+  --hero-aspect: 0.778;
   --reveal-shift: 10%;
 }
 
@@ -680,7 +680,7 @@ button:focus-visible {
     in oklab,
     var(--color-page-text)
       calc((1 - var(--wm-lift) * (1 - var(--wm-p))) * 100%),
-    var(--color-page-bg)
+    var(--wm-start, var(--color-page-bg))
   );
   display: flex;
   font-family: var(--font-display);

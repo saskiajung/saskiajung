@@ -37,7 +37,7 @@ export const menu: MenuItem[] = [
     label: "Selected Work",
     href: "/work",
     preview: {
-      src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-01",
+      src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-08",
       alt: "An editorial frame from Schön Magazine styled by Saskia Jung.",
     },
   },
@@ -68,9 +68,10 @@ export const site = {
 };
 
 export const hero = {
-  src: "/images/gant/gant-special-zoo-nina-raasch-13",
-  alt: "A model in an oversized grey wool jacket standing in an open field beneath a pale sky.",
+  src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-01",
+  alt: "A model in a striped knit and shorts seated on a blue indoor tennis court beside a racket, shot for Schön Magazine.",
   color: "#201E1F",
+  wordmark: "#F2F0EB",
 };
 
 export const projects: Project[] = [

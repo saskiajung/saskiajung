@@ -15,7 +15,7 @@ const SINGLE_SIZES = "(orientation: landscape) 68vh, 86vw";
 const SPREAD_SIZES = "(orientation: landscape) 60vh, 66vw";
 
 const HOLD = 0.35;
-const HERO_FOCUS = 0.28;
+const HERO_FOCUS = 0.75;
 const VISITED = "sj-visited";
 
 const parts = [
@@ -200,7 +200,11 @@ export function Home({ projects }: Props) {
   );
 
   return (
-    <div className="c-home" ref={root}>
+    <div
+      className="c-home"
+      ref={root}
+      style={{ "--wm-start": hero.wordmark } as React.CSSProperties}
+    >
       <div className="c-home__container">
           <section
             className="c-home__hero"
