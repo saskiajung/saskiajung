@@ -73,6 +73,47 @@ export function About() {
           </div>
         </div>
       </div>
+
+      {about.sections.map((section) => (
+        <section className="c-strand" key={section.label}>
+          <header className="c-strand__head">
+            <h2 className="c-strand__title">{section.label}</h2>
+            <p className="c-strand__lead">{section.lead}</p>
+          </header>
+
+          <div className="c-practice">
+            {section.blocks.map((block) => (
+              <div className="c-practice__block" key={block.label}>
+                <h3 className="c-practice__label">{block.label}</h3>
+                <ul className="c-practice__list">
+                  {block.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="c-practice__work">
+            {section.work.map((item, index) => (
+              <figure
+                className="c-practice__item c-reveal"
+                key={item.visual.src ?? index}
+              >
+                <Slot
+                  sizes="(orientation: landscape) 24vw, 86vw"
+                  slot={item.visual}
+                />
+                {item.caption ? (
+                  <figcaption className="c-practice__caption">
+                    {item.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

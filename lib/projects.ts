@@ -19,8 +19,6 @@ export type Project = {
   slug: string;
   category: Category;
   title: string;
-  year: string;
-  credit: string;
   color: string;
   layout: "single" | "spread";
   story: ProjectImage[];
@@ -32,7 +30,6 @@ export type MenuItem = {
   label: string;
   href: string;
   preview: { src: string; alt: string };
-  children?: { label: string; href: string }[];
 };
 
 export const menu: MenuItem[] = [
@@ -40,13 +37,9 @@ export const menu: MenuItem[] = [
     label: "Selected Work",
     href: "/work",
     preview: {
-      src: "/images/10magazine/10magazine-de-nina-raasch-01",
-      alt: "A model in a white strapless top and floor-length black skirt.",
+      src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-01",
+      alt: "An editorial frame from Schön Magazine styled by Saskia Jung.",
     },
-    children: [
-      { label: categoriesOrder[0].label, href: "/work?c=styling" },
-      { label: categoriesOrder[1].label, href: "/work?c=campaign" },
-    ],
   },
   {
     label: "Creative Direction & Styling",
@@ -54,22 +47,6 @@ export const menu: MenuItem[] = [
     preview: {
       src: "/images/deck/creative-direction-lace-up",
       alt: "A model in a white shirt and laced black skirt against dark panelling.",
-    },
-  },
-  {
-    label: "On Camera & Brand Partnerships",
-    href: "/on-camera",
-    preview: {
-      src: "/images/deck/on-camera-sleek-cybex",
-      alt: "A Sleek magazine cover featuring Saskia Jung.",
-    },
-  },
-  {
-    label: "Workshops & Mentoring",
-    href: "/workshops",
-    preview: {
-      src: "/images/deck/workshops-kadewe",
-      alt: "Saskia Jung presenting beside a rail of garments.",
     },
   },
   {
@@ -87,140 +64,142 @@ export const site = {
   last: "Jung",
   email: "contact@saskiajung.com",
   instagram: "https://instagram.com/saskiajung_",
-  backgroundColor: "#E9EAEC",
+  backgroundColor: "#F2F0EB",
 };
 
 export const hero = {
   src: "/images/gant/gant-special-zoo-nina-raasch-13",
-  alt: "A model in an oversized grey wool jacket standing in an open field beneath a pale sky, shot for GANT.",
-  color: "#2B3A67",
+  alt: "A model in an oversized grey wool jacket standing in an open field beneath a pale sky.",
+  color: "#201E1F",
 };
-
-const ten = "/images/10magazine/10magazine-de-nina-raasch";
-const gant = "/images/gant/gant-special-zoo-nina-raasch";
-const one = "/images/one-magazine/snapinsta-to";
-const sleek = "/images/sleekmag/snapinsta-to";
 
 export const projects: Project[] = [
   {
-    slug: "10-magazine",
-    category: "styling",
-    title: "10 Magazine",
-    year: "2025",
-    credit: "10 Magazine Germany",
-    color: "#22403C",
-    layout: "single",
-    home: [0],
-    cover: 4,
+    slug: "yoox",
+    category: "campaign",
+    title: "YOOX",
+    color: "#201e1f",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
     story: [
       {
-        src: `${ten}-01`,
-        alt: "A model in a white strapless top and floor-length black skirt against a panelled stone wall.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-christopher-1-1",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-02`,
-        alt: "A model in sunglasses and a studded dark top seated on a kerb, with white trainers.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-christopher-2",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-03`,
-        alt: "A model in a pale sleeveless top and long skirt crossing a marked street.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-christopher-4",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-04`,
-        alt: "A model in a dark patterned top and wide trousers standing on a pedestrian crossing.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-claudia-2",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-05`,
-        alt: "A model in an oversized olive coat and grey pinstripe trousers walking past a green door.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-jamila-3",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-06`,
-        alt: "A black and white contact sheet of frames showing hair caught in motion.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-jamila2-1",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-07`,
-        alt: "A model in a white sleeveless top and long white skirt, arms folded, against a pale wall.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-leo1",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
       {
-        src: `${ten}-08`,
-        alt: "A model in a black bra top holding a soft olive-grey shoulder bag.",
-      },
-      {
-        src: `${ten}-09`,
-        alt: "A model in a sheer top and dark trousers standing on a quiet street beside a lamp post.",
-      },
-      {
-        src: `${ten}-10`,
-        alt: "A model in long leather gloves and a studded belt, arms crossed, hair falling across the face.",
-      },
-      {
-        src: `${ten}-11`,
-        alt: "A model carrying a folded green garment over a layered coat and wide pinstripe trousers.",
+        src: "/images/yoox/yoox-leave-your-mark-photo-leo3",
+        alt: "YOOX campaign styled by Saskia Jung.",
       },
     ],
   },
   {
-    slug: "gant-zoo",
+    slug: "adidas-training",
     category: "campaign",
-    title: "GANT Special ZOO",
-    year: "2024",
-    credit: "GANT",
-    color: "#2B3A67",
+    title: "adidas Training",
+    color: "#5f55b3",
     layout: "spread",
-    home: [2, 3],
-    cover: 9,
+    home: [0, 1],
+    cover: 1,
     story: [
       {
-        src: `${gant}-01`,
-        alt: "Two models in tan and grey double-breasted tailoring outside a pale building.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-day01-massy-look-03-0208-bw",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-02`,
-        alt: "Two models in grey and brown tailoring standing together in an open field.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-day01-sisters-look-03-0328",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-03`,
-        alt: "A model in a cream shearling-collared coat over a grey turtleneck, against a teal backdrop.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-day02-massy-look-01-0094-col",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-04`,
-        alt: "A model in a grey-green suit and black high-top trainers reclining against a deep red ground.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-day02-sisters-look-01-1113",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-05`,
-        alt: "A model in a tan trench over a pale blue pinstripe shirt, one hand resting on the head.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-day02-sohee-look-03-0029",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-06`,
-        alt: "A model in a grey turtleneck and brown trousers leaning against a white wall.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-launch-massy-alt-look-02-01",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-07`,
-        alt: "Two models standing on a wooden pallet, one in a white tee, one in brown tailoring.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-launch-sisters-alt-look-01-02",
+        alt: "adidas Training campaign styled by Saskia Jung.",
       },
       {
-        src: `${gant}-08`,
-        alt: "A model in a grey blazer holding a single stem, standing in a field.",
+        src: "/images/adidas-training/adidas-training-partnerpages-ss25-launch-sisters-alt-look-03-01-tif",
+        alt: "adidas Training campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "schoen-magazine",
+    category: "styling",
+    title: "Schön Magazine",
+    color: "#201e1f",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-01",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${gant}-09`,
-        alt: "A model in a beige jacket and trousers beside a wall marked with a red streak.",
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-08",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${gant}-10`,
-        alt: "A model in a navy GANT 1949 sweatshirt and black beanie, shot close.",
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-16",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${gant}-11`,
-        alt: "A model in an olive jacket and brown trousers lying across asphalt, one arm outstretched.",
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-18-1",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${gant}-12`,
-        alt: "A model in a brown coat over a yellow collar, seated against a pale wall.",
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-finals-selects-20-1",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${gant}-13`,
-        alt: "A model in an oversized grey wool jacket standing in an open field beneath a pale sky.",
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-outtakes-03-1",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-outtakes-05",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/schoen-magazine/2026-03-30-sch-n-print-outtakes-09",
+        alt: "Schön Magazine editorial styled by Saskia Jung.",
       },
     ],
   },
@@ -228,77 +207,490 @@ export const projects: Project[] = [
     slug: "one-magazine",
     category: "styling",
     title: "One Magazine",
-    year: "2024",
-    credit: "One Magazine",
-    color: "#5B2D4A",
-    layout: "single",
-    home: [0],
-    cover: 7,
+    color: "#5f55b3",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
     story: [
       {
-        src: `${one}-779527761-18610352347050604-1955805883961148961-n`,
-        alt: "A model in a tall black brimless hat and dark top against a red painted door.",
+        src: "/images/one-magazine/elenabreuer-one-magazine",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-779624538-18610352464050604-6744657966143841321-n`,
-        alt: "A close study of white pointed heels against weathered concrete.",
+        src: "/images/one-magazine/elenabreuer-one-magazine1",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-779669259-18610352425050604-379700904525683470-n`,
-        alt: "A model photographed from behind in a denim skirt, long curled hair falling loose.",
+        src: "/images/one-magazine/elenabreuer-one-magazine11",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-779669337-18610352404050604-7811910933283995580-n`,
-        alt: "A model in sunglasses and a black jacket over a nude bandeau, outside a shopfront.",
+        src: "/images/one-magazine/elenabreuer-one-magazine13",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-779728996-18610352389050604-5668036846249176139-n`,
-        alt: "A model in a long fringed skirt and tall boots against a pale wall.",
+        src: "/images/one-magazine/elenabreuer-one-magazine3",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-779816268-18610352413050604-8075764012483892659-n`,
-        alt: "A model in a black shearling coat with long hair falling across the frame.",
+        src: "/images/one-magazine/elenabreuer-one-magazine4",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-779865305-18610352371050604-2470997872958034122-n`,
-        alt: "A model in a soft grey-blue top seated, long hair over the shoulders.",
+        src: "/images/one-magazine/elenabreuer-one-magazine6",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
       {
-        src: `${one}-780140090-18610352449050604-2255341432987877733-n`,
-        alt: "A model in a sheer lace top and dark pleated skirt against pale panelled doors.",
+        src: "/images/one-magazine/elenabreuer-one-magazine8",
+        alt: "One Magazine editorial styled by Saskia Jung.",
       },
     ],
   },
   {
-    slug: "sleek-magazine",
+    slug: "le-mile",
     category: "styling",
-    title: "Sleek Magazine",
-    year: "2025",
-    credit: "Sleek Magazine",
-    color: "#1F4E5F",
+    title: "Le Mile",
+    color: "#201e1f",
     layout: "spread",
-    home: [3, 4],
+    home: [0, 1],
     cover: 1,
     story: [
       {
-        src: `${sleek}-645988112-17887872621329248-1546588180640997126-n`,
-        alt: "A model in a tan jacket and grey skirt seated on a folding chair on a pavement.",
+        src: "/images/le-mile/le-mile-analog-previews-4502-v2",
+        alt: "Le Mile editorial styled by Saskia Jung.",
       },
       {
-        src: `${sleek}-649052056-17890853085310471-4177207046912289030-n`,
-        alt: "A model in a bright blue dress stepping down a metal staircase.",
+        src: "/images/le-mile/le-mile-analog-to-edit-4501-v3",
+        alt: "Le Mile editorial styled by Saskia Jung.",
       },
       {
-        src: `${sleek}-656023737-18106984879863868-8834461460961565959-n`,
-        alt: "A model in a pale ribbed knit dress standing against a white tiled wall.",
+        src: "/images/le-mile/le-mile-x-lisa2600-to-edit-v2",
+        alt: "Le Mile editorial styled by Saskia Jung.",
       },
       {
-        src: `${sleek}-656064828-18205741060332931-5516023910985996561-n`,
-        alt: "A close-cropped black and white portrait of a model with a sharp bob, shot through sheer fabric.",
+        src: "/images/le-mile/le-mile-x-lisa2784-to-edit-v2",
+        alt: "Le Mile editorial styled by Saskia Jung.",
       },
       {
-        src: `${sleek}-657761369-18198249286350937-5450906341374023684-n`,
-        alt: "A model in an electric blue satin jacket leaning forward, hair swept across the frame.",
+        src: "/images/le-mile/le-mile-x-lisa2829-to-edit-1-c-v1",
+        alt: "Le Mile editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/le-mile/le-mile-x-lisa3045-to-edit-v2",
+        alt: "Le Mile editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/le-mile/le-mile-x-lisa3336-to-edit-v2",
+        alt: "Le Mile editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/le-mile/le-mile-x-lisa3660-to-edit-v2",
+        alt: "Le Mile editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "comma",
+    category: "campaign",
+    title: "Comma",
+    color: "#5f55b3",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/comma/502-503-comma-womensday-look-3-0141",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-11-0062",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-12-0054",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-12-0103",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-12-0103-1",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-2-0309",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-5-0098",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/comma/503-comma-womensday-look-5-0368-1",
+        alt: "Comma campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "ic-berlin",
+    category: "campaign",
+    title: "ic! berlin",
+    color: "#201e1f",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/ic-berlin/ic-berlinxmercedes-benz-nina-raasch-02-srgb-2000px",
+        alt: "ic! berlin campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/ic-berlin/ic-berlinxmercedes-benz-nina-raasch-04-srgb-2000px",
+        alt: "ic! berlin campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/ic-berlin/ic-berlinxmercedes-benz-nina-raasch-07-srgb-2000px",
+        alt: "ic! berlin campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/ic-berlin/ic-berlinxmercedes-benz-nina-raasch-16-srgb-2000px",
+        alt: "ic! berlin campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/ic-berlin/ic-berlinxmercedes-benz-nina-raasch-20-srgb-2000px-outtake-social-use-only",
+        alt: "ic! berlin campaign styled by Saskia Jung.",
+      },
+      {
+        src: "/images/ic-berlin/ic-berlinxmercedes-benz-nina-raasch-21-srgb-2000px-outtake-social-use-only",
+        alt: "ic! berlin campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "matthias-ogger",
+    category: "styling",
+    title: "Matthias Ogger",
+    color: "#5f55b3",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/matthias-ogger/260326-matthias-leidinger-leni-01",
+        alt: "Matthias Ogger editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/matthias-ogger/260326-matthias-leidinger-leni-03",
+        alt: "Matthias Ogger editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/matthias-ogger/260326-matthias-leidinger-leni-04",
+        alt: "Matthias Ogger editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/matthias-ogger/260326-matthias-leidinger-leni-05",
+        alt: "Matthias Ogger editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/matthias-ogger/260326-matthias-leidinger-leni-08",
+        alt: "Matthias Ogger editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/matthias-ogger/260326-matthias-leidinger-leni-15",
+        alt: "Matthias Ogger editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "10-magazine",
+    category: "styling",
+    title: "10 Magazine",
+    color: "#201e1f",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-01",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-02",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-03",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-04",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-05",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-06",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-07",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-08",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-09",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-10",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/10magazine-de-nina-raasch-11",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/10-magazine/bildschirmfoto-2026-08-25-um-17-20-35",
+        alt: "10 Magazine editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "trust-management",
+    category: "styling",
+    title: "Trust Management",
+    color: "#5f55b3",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/trust-management/bildschirmfoto-2026-08-25-um-17-51-34",
+        alt: "Trust Management editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/trust-management/bildschirmfoto-2026-08-25-um-17-51-41",
+        alt: "Trust Management editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "wrpd-magazine",
+    category: "styling",
+    title: "WRPD Magazine",
+    color: "#201e1f",
+    layout: "spread",
+    home: [0, 1],
+    cover: 1,
+    story: [
+      {
+        src: "/images/wrpd-magazine/bildschirmfoto-2026-08-25-um-17-27-59",
+        alt: "WRPD Magazine editorial styled by Saskia Jung.",
+      },
+      {
+        src: "/images/wrpd-magazine/bildschirmfoto-2026-08-25-um-17-50-35",
+        alt: "WRPD Magazine editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "adidas",
+    category: "campaign",
+    title: "adidas",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/adidas/bildschirmfoto-2026-08-25-um-18-05-17",
+        alt: "adidas campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "hugo-boss",
+    category: "campaign",
+    title: "Hugo Boss",
+    color: "#201e1f",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/hugo-boss/bildschirmfoto-2026-08-25-um-17-57-31",
+        alt: "Hugo Boss campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "hugo-boss-zalando",
+    category: "campaign",
+    title: "Hugo Boss x Zalando",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/hugo-boss-zalando/bildschirmfoto-2026-09-03-um-16-35-05",
+        alt: "Hugo Boss x Zalando campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "ivy-oak",
+    category: "campaign",
+    title: "Ivy Oak",
+    color: "#201e1f",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/ivy-oak/bildschirmfoto-2026-08-25-um-17-57-40",
+        alt: "Ivy Oak campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "pandora",
+    category: "campaign",
+    title: "Pandora",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/pandora/bildschirmfoto-2026-08-25-um-17-54-07",
+        alt: "Pandora campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "vagabond",
+    category: "campaign",
+    title: "Vagabond",
+    color: "#201e1f",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/vagabond/bildschirmfoto-2026-08-25-um-17-57-53",
+        alt: "Vagabond campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "venczel",
+    category: "campaign",
+    title: "Venczel",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/venczel/bildschirmfoto-2026-08-25-um-18-07-27",
+        alt: "Venczel campaign styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "cap74024",
+    category: "styling",
+    title: "CAP74024",
+    color: "#201e1f",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/cap74024/bildschirmfoto-2026-08-25-um-17-48-30",
+        alt: "CAP74024 editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "metal-magazine",
+    category: "styling",
+    title: "Metal Magazine",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/metal-magazine/bildschirmfoto-2026-08-25-um-17-44-25",
+        alt: "Metal Magazine editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "nr-magazine",
+    category: "styling",
+    title: "NR Magazine",
+    color: "#201e1f",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/nr-magazine/bildschirmfoto-2026-08-25-um-17-45-05",
+        alt: "NR Magazine editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "puss-puss-magazine",
+    category: "styling",
+    title: "Puss Puss Magazine",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/puss-puss-magazine/bildschirmfoto-2026-08-25-um-17-46-56",
+        alt: "Puss Puss Magazine editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "songzio",
+    category: "styling",
+    title: "Songzio",
+    color: "#201e1f",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/songzio/bildschirmfoto-2026-08-25-um-17-56-51",
+        alt: "Songzio editorial styled by Saskia Jung.",
+      },
+    ],
+  },
+  {
+    slug: "zoo-magatine",
+    category: "styling",
+    title: "Zoo Magazine",
+    color: "#5f55b3",
+    layout: "single",
+    home: [0],
+    cover: 0,
+    story: [
+      {
+        src: "/images/zoo-magatine/bildschirmfoto-2026-08-25-um-17-57-01",
+        alt: "Zoo Magazine editorial styled by Saskia Jung.",
       },
     ],
   },

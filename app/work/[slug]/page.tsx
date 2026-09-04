@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   const title = `${project.title} - ${site.first} ${site.last}`;
-  const description = `${project.title}, ${project.credit}, ${project.year}. Styling and creative direction by ${site.first} ${site.last}.`;
+  const description = `${project.title}. Styling and creative direction by ${site.first} ${site.last}.`;
 
   return {
     title,

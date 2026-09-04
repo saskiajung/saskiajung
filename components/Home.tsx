@@ -229,7 +229,7 @@ export function Home({ projects }: Props) {
               data-color={project.color}
               data-index={index}
               data-layout={project.layout}
-              aria-label={`${project.title}, ${project.year}`}
+              aria-label={project.title}
             >
               <Link className="c-home__frame" href={`/work/${project.slug}`}>
                 {project.home.map((i) => project.story[i]).map((image) => (

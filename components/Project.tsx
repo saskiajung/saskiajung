@@ -7,7 +7,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Photo } from "@/components/Photo";
-import { type Project as ProjectType, site } from "@/lib/projects";
+import {
+  categories,
+  type Project as ProjectType,
+  site,
+} from "@/lib/projects";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -57,11 +61,7 @@ export function Project({ project, next }: Props) {
     <div className="c-project" ref={root}>
       <header className="c-project__head">
         <h1 className="c-project__title">{project.title}</h1>
-        <p className="c-project__meta">
-          {project.credit === project.title
-            ? project.year
-            : `${project.credit}, ${project.year}`}
-        </p>
+        <p className="c-project__meta">{categories[project.category]}</p>
       </header>
 
       <div className="c-project__grid">

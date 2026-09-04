@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { Photo } from "@/components/Photo";
 import {
   type Category,
+  categories,
   categoriesOrder,
   type Project,
   site,
@@ -131,11 +132,7 @@ export function Work({ projects }: Props) {
 
               <div className="c-work__caption">
                 <h2 className="c-work__name">{project.title}</h2>
-                <p className="c-work__meta">
-                  {project.credit === project.title
-                    ? project.year
-                    : `${project.credit}, ${project.year}`}
-                </p>
+                <p className="c-work__meta">{categories[project.category]}</p>
               </div>
             </Link>
           </article>

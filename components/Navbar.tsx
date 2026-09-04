@@ -103,22 +103,6 @@ export function Navbar({ menu }: Props) {
                 >
                   {item.label}
                 </a>
-
-                {item.children ? (
-                  <ul className="c-menu__sub">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <a
-                          className="c-menu__sublink"
-                          href={child.href}
-                          onClick={() => setOpen(false)}
-                        >
-                          {child.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
               </li>
             ))}
           </ul>

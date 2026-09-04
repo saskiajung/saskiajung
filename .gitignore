@@ -47,3 +47,7 @@ out/
 # next.js agent files (auto-generated)
 AGENTS.md
 CLAUDE.md
+
+# source photography (not deployed, optimised into public/images)
+/source/
+/assets/

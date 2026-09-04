@@ -6,7 +6,7 @@ const SOURCE = "assets";
 const OUTPUT = path.join("public", "images");
 const MANIFEST = path.join("lib", "images.ts");
 const WIDTHS = [480, 640, 960, 1440, 1920];
-const MAX_WIDTH = 1920;
+const MAX_WIDTH = 1600;
 const QUALITY = 80;
 
 function slugify(file) {

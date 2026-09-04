@@ -23,16 +23,24 @@ export type Practice = {
   work: WorkItem[];
 };
 
+export type AboutSection = {
+  label: string;
+  lead: string;
+  blocks: Block[];
+  work: WorkItem[];
+};
+
 export const showPending = true;
 
 const deck = "/images/deck";
-const one = "/images/one-magazine/snapinsta-to";
+const edited = "/images/edited/edited-mothers-day-nina-raasch";
+const sleekCybex = "/images/sleek-and-cybex/bildschirmfoto-2026-09-03-um-16-36-17";
 
 export const practices: Practice[] = [
   {
     slug: "creative-direction",
     title: "Creative Direction & Styling",
-    color: "#22403C",
+    color: "#5F55B3",
     lead: "Turning brand DNA into distinct visual stories, from moodboards and talent selection through to full on-set execution.",
     blocks: [
       {
@@ -42,6 +50,15 @@ export const practices: Practice[] = [
           "Lookbook direction",
           "E-commerce elevating",
           "Wardrobe sourcing",
+        ],
+      },
+      {
+        label: "Approach",
+        items: [
+          "Concept development and moodboards",
+          "Casting and team assembly",
+          "Art direction on set",
+          "Image selection and final edit",
         ],
       },
     ],
@@ -69,121 +86,11 @@ export const practices: Practice[] = [
       },
     ],
   },
-  {
-    slug: "on-camera",
-    title: "On Camera & Brand Partnerships",
-    color: "#2B3A67",
-    lead: "Bridging high-fashion expertise with engaging storytelling: hosting events, curating brand-favourite picks, and guiding audiences through upcoming trends.",
-    blocks: [
-      {
-        label: "Services",
-        items: [
-          "Event hosting",
-          "On-camera trend commentary",
-          "Live shopping and content creation",
-          "Editorial and commercial styling",
-        ],
-      },
-    ],
-    work: [
-      {
-        caption: "Sleek and Cybex",
-        visual: {
-          pending: "Cover",
-          src: `${deck}/on-camera-sleek-cybex`,
-          alt: "A Sleek magazine cover featuring Saskia Jung in denim and a fringed skirt.",
-        },
-      },
-      {
-        caption: "Hosting event with Sellpy",
-        visual: {
-          pending: "Event still",
-          src: `${deck}/on-camera-sellpy`,
-          alt: "Saskia Jung interviewing a guest with a microphone at a Sellpy event.",
-        },
-      },
-      {
-        caption: "Hosting event with Sezane",
-        visual: {
-          pending: "Event still",
-          src: `${deck}/on-camera-sezane`,
-          alt: "A group of guests photographed together at a Sezane hosting event.",
-        },
-      },
-      {
-        caption: "Mother's Day campaign with Edited",
-        visual: {
-          pending: "Campaign still",
-          src: `${deck}/on-camera-edited`,
-          alt: "A woman and a small child in matching denim against a pale blue wall.",
-        },
-      },
-    ],
-  },
-  {
-    slug: "workshops",
-    title: "Workshops & Mentoring",
-    color: "#1F4E5F",
-    lead: "Workshops and mentoring for brands, teams and emerging stylists, built around wardrobe, trend direction and set work.",
-    blocks: [
-      {
-        label: "Formats",
-        items: [
-          "Interactive brand workshops",
-          "Corporate styling masterclasses",
-          "Executive wardrobe coaching",
-          "One-to-one mentoring for emerging stylists",
-        ],
-      },
-      {
-        label: "Core topics",
-        items: [
-          "Personal branding through wardrobe",
-          "Seasonal trend direction",
-          "Professional sourcing and set work mastery",
-        ],
-      },
-    ],
-    work: [
-      {
-        caption: "Styling masterclass",
-        visual: {
-          pending: "Masterclass",
-          src: `${one}-779816268-18610352413050604-8075764012483892659-n`,
-          alt: "A model in a black shearling coat with long hair falling across the frame.",
-        },
-      },
-      {
-        caption: "Styled for KaDeWe",
-        visual: {
-          pending: "Video still",
-          src: `${deck}/workshops-kadewe`,
-          alt: "Saskia Jung presenting beside a rail of garments in a KaDeWe fitting space.",
-        },
-      },
-      {
-        caption: "Hosting event",
-        visual: {
-          pending: "Event still",
-          src: `${deck}/workshops-hosting`,
-          alt: "A styling rail and merchandised wall inside a Sellpy store.",
-        },
-      },
-      {
-        caption: "Styling on set",
-        visual: {
-          pending: "On set",
-          src: `${deck}/workshops-on-set`,
-          alt: "Two stylists carrying garment bags along a street on a shoot day.",
-        },
-      },
-    ],
-  },
 ];
 
 export const about = {
   title: "About & Vision",
-  color: "#5B2D4A",
+  color: "#201E1F",
   headline: "Modern elegance meets strategic vision",
   bio: [
     "Based in Berlin, I work at the intersection of creative direction, high-end styling, and brand storytelling.",
@@ -193,19 +100,125 @@ export const about = {
   portrait: {
     pending: "Portrait",
     src: `${deck}/portrait-saskia`,
-    alt: "Saskia Jung in a black blazer and sunglasses, smiling.",
+    alt: "Saskia Jung in a black blazer and sunglasses.",
   } as Slot,
   clientsLabel: "Selected clients",
   clients: [
-    "GANT",
+    "adidas",
+    "Hugo Boss",
+    "YOOX",
+    "Pandora",
+    "Comma",
+    "ic! berlin",
+    "Ivy Oak",
+    "Vagabond",
     "KaDeWe",
-    "Sezane",
+    "Sézane",
     "Sellpy",
     "Edited",
     "Cybex",
-    "Lala Berlin",
-    "Sleek Magazine",
+    "Schön Magazine",
+    "Le Mile",
     "10 Magazine",
-    "One Magazine",
   ],
+  sections: [
+    {
+      label: "On Camera & Brand Partnerships",
+      lead: "Bridging high-fashion expertise with engaging storytelling: hosting events, curating brand-favourite picks, and guiding audiences through upcoming trends.",
+      blocks: [
+        {
+          label: "Services",
+          items: [
+            "Event hosting",
+            "On-camera trend commentary",
+            "Live shopping and content creation",
+            "Editorial and commercial styling",
+          ],
+        },
+      ],
+      work: [
+        {
+          caption: "Mother's Day campaign with Edited",
+          visual: {
+            pending: "Campaign still",
+            src: `${edited}-02-srgb-2500px`,
+            alt: "A campaign frame from the Edited Mother's Day story.",
+          },
+        },
+        {
+          caption: "Edited",
+          visual: {
+            pending: "Campaign still",
+            src: `${edited}-14-srgb-2500px`,
+            alt: "A second frame from the Edited Mother's Day campaign.",
+          },
+        },
+        {
+          caption: "Sleek and Cybex",
+          visual: {
+            pending: "Cover",
+            src: sleekCybex,
+            alt: "A Sleek magazine cover featuring Saskia Jung.",
+          },
+        },
+        {
+          caption: "Hosting event with Sellpy",
+          visual: {
+            pending: "Event still",
+            src: `${deck}/on-camera-sellpy`,
+            alt: "Saskia Jung interviewing a guest with a microphone at a Sellpy event.",
+          },
+        },
+      ],
+    },
+    {
+      label: "Workshops & Mentoring",
+      lead: "Workshops and mentoring for brands, teams and emerging stylists, built around wardrobe, trend direction and set work.",
+      blocks: [
+        {
+          label: "Formats",
+          items: [
+            "Interactive brand workshops",
+            "Corporate styling masterclasses",
+            "Executive wardrobe coaching",
+            "One-to-one mentoring for emerging stylists",
+          ],
+        },
+        {
+          label: "Core topics",
+          items: [
+            "Personal branding through wardrobe",
+            "Seasonal trend direction",
+            "Professional sourcing and set work mastery",
+          ],
+        },
+      ],
+      work: [
+        {
+          caption: "Styled for KaDeWe",
+          visual: {
+            pending: "Video still",
+            src: `${deck}/workshops-kadewe`,
+            alt: "Saskia Jung presenting beside a rail of garments in a KaDeWe fitting space.",
+          },
+        },
+        {
+          caption: "Hosting event",
+          visual: {
+            pending: "Event still",
+            src: `${deck}/workshops-hosting`,
+            alt: "A styling rail and merchandised wall inside a Sellpy store.",
+          },
+        },
+        {
+          caption: "Styling on set",
+          visual: {
+            pending: "On set",
+            src: `${deck}/workshops-on-set`,
+            alt: "Two stylists carrying garment bags along a street on a shoot day.",
+          },
+        },
+      ],
+    },
+  ] as AboutSection[],
 };
